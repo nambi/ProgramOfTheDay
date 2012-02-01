@@ -1,0 +1,37 @@
+<html>
+<body>
+<script>
+
+if(!window.console){
+	 window.console = {log : function(){}};
+ }
+
+var backup = console.log;
+
+function beforeLog(){
+	return false;
+    backup('before log:',arguments);
+}
+
+function afterLog(){
+    backup('after log:',arguments);
+}
+
+console.log = function(){
+    beforeLog.apply(this,arguments);
+    backup.apply(this,arguments);
+    afterLog.apply(this,arguments);
+}
+
+console.log('hello','world');
+
+Function.prototype.callWithIntercept = function () {
+  alert ("intercept");
+  return this.apply (null, arguments);
+};
+
+var num = parseInt.callWithIntercept ("100px", 10);
+
+</script>
+</body>
+</html>
