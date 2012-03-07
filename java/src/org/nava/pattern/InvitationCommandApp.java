@@ -1,4 +1,4 @@
-package org.nava.command;
+package org.nava.pattern;
 
 import java.util.ArrayList;
 import java.util.List;
