@@ -1,4 +1,19 @@
 
+
+Basic Commands
+----------------
+git clone 
+git pull 
+git fetch 
+git commit -m "message" 
+git status 
+git log 
+git push origin master 
+git checkout <file_name or branch> to revert all the local changes 
+git reset --hard <reset full repo>
+git checkout -b <branch_name> create new branch 
+
+
 To work with Git SSH 
 -----------------------
 By default whne you clone with https, the origins are added https url. In order to work with already setup SSH keys, we need to remove the existing one and add below
@@ -8,5 +23,7 @@ git remote remove origin
 git remote add origin git@github.com:user/repo.git  
 
 make sure you authenticate with SSH Pharaphrase instead of your github credentials 
+
+This is one time activity for each repo with initial clone. 
 
 ---------------------
