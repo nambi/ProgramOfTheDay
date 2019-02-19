@@ -1,4 +1,4 @@
-package org.nava;
+package org.nava.year19.jan;
 
 import java.io.DataInputStream;
 import java.util.Scanner;
