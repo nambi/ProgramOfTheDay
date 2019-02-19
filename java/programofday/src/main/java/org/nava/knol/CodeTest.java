@@ -18,7 +18,6 @@ public class CodeTest
 		}
 		H1 h1 = new H1();
 		System.out.println(h1.name);
-		// TODO Auto-generated method stub
 		int x = 0;
 		for (x = 0; x < 5; x++)
 		{

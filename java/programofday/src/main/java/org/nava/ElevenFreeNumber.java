@@ -32,6 +32,7 @@ public class ElevenFreeNumber {
 
 			}
 		}
+		scan.close();
 	}
 
 	private static void isElevenFreeNum(Long givenNumber) {

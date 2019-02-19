@@ -159,6 +159,7 @@ public class NumberToWords
 	 * @param num
 	 * @return
 	 */
+    @SuppressWarnings("unused")
 	private String _spellNumber(int num)
 	{
 		String word = null;

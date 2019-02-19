@@ -10,8 +10,7 @@ public class DeadLock
 
 	public static void main(String args[])
 	{
-		String s = "1";
-		String s1 = "1";
+	
 		System.out.println(312 >> 4);
 
 		s run = new s();
@@ -20,7 +19,7 @@ public class DeadLock
 		t1.start();
 		t2.start();
 
-		Thread g = new Thread() {
+		new Thread() {
 			public void run()
 			{
 				String a = "a";

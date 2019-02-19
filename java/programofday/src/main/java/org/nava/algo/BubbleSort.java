@@ -3,7 +3,7 @@ package org.nava.algo;
 public class BubbleSort {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
 		int[] input = { 9,1,0, 6, 8, 4 };
 		
 		int[] output = sort(input);
