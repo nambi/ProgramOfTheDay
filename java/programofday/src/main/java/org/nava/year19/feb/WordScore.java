@@ -1,7 +1,6 @@
 package org.nava.year19.feb;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Output a total score for given word based on below formula Weight for letters
