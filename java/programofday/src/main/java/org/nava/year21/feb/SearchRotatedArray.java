@@ -8,16 +8,18 @@ public class SearchRotatedArray {
 
     public static void main(String[] args) {
 
-        int[] v1 = {6, 7, 1, 2, 3, 4, 5};
-        System.out.println("Key(3) found at: " + binarySearchRotated(v1, 3));
-        System.out.println("Key(6) found at: " + binarySearchRotated(v1, 6));
-
-        int[] v2 = {4, 5, 6, 1, 2, 3};
-        System.out.println("Key(3) found at: " + binarySearchRotated(v2, 3));
-        System.out.println("Key(6) found at: " + binarySearchRotated(v2, 6));
+//        int[] v1 = {6, 7, 1, 2, 3, 4, 5};
+//        System.out.println("Key(3) found at: " + binarySearchRotated(v1, 3));
+//        System.out.println("Key(6) found at: " + binarySearchRotated(v1, 6));
+//
+//        int[] v2 = {4, 5, 6, 1, 2, 3};
+//        System.out.println("Key(3) found at: " + binarySearchRotated(v2, 3));
+//        System.out.println("Key(6) found at: " + binarySearchRotated(v2, 6));
 
         int[] v3 = {4, 5, 6, 1, 2, 3, 8, 9, 12, 16};
-        System.out.println("Key(8) found at: " + binarySearchRotated(v3, 8));
+        //System.out.println("Key(8) found at: " + binarySearchRotated(v3, 8));
+
+        //todo fix this test case
         System.out.println("Key(6) found at: " + binarySearchRotated(v3, 6));
 
     }
@@ -49,12 +51,14 @@ public class SearchRotatedArray {
             }
 
             if (key > arr[start] && key < arr[mid]) {
+                start = start + 1;
                 end = mid;
             }
 
             if (key > arr[mid] && key < arr[end]) {
                 start = mid;
             }
+
         }
         return -1;
     }
