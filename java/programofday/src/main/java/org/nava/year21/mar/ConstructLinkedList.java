@@ -66,7 +66,22 @@ class LinkedList {
 
         return head;
     }
+    public static LinkedListNode createLinkedList(ArrayList<Integer> arr) {
+        LinkedListNode head = null;
+        LinkedListNode tail = null;
 
+        for (int a : arr) {
+            LinkedListNode node = new LinkedListNode(a);
+            if (head == null) {
+                head = node;
+            } else {
+                tail.next = node;
+            }
+            tail = node;
+        }
+
+        return head;
+    }
     public static void display(LinkedListNode head) {
         LinkedListNode tail = head;
         if (tail != null) {
