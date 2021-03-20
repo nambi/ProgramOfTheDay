@@ -8,6 +8,14 @@ public class MergedTwoLists {
 
     public static LinkedListNode merge(LinkedListNode head1, LinkedListNode head2) {
 
+        if (head1 == null) {
+            return head2;
+        }
+
+        if (head2 == null) {
+            return head1;
+        }
+
         LinkedListNode tail1 = head1;
         LinkedListNode tail2 = head2;
 
