@@ -1,5 +1,7 @@
 package org.nava.year21.mar;
 
+import java.util.ArrayList;
+
 /**
  * Reverse Even Nodes in a Linked List
  * <p>
@@ -10,7 +12,35 @@ public class ReverseEvenIndices {
 
     public static LinkedListNode reverse(LinkedListNode head) {
 
-        return null;
+        LinkedListNode tail = head;
+        ArrayList<LinkedListNode> nodeList = new ArrayList<>();
+        while (tail.next != null) {
+            nodeList.add(tail);
+            tail = tail.next;
+        }
+        nodeList.add(tail);
+        LinkedListNode prev = null;
+        LinkedListNode prevPrev = null;
+        for (int i = 0; i < nodeList.size(); i++) {
+            if ((i + 1) % 2 == 0) {
+                if (prev == null) {
+                    prevPrev = nodeList.get(i - 1);
+                    prev = nodeList.get(i);
+                } else {
+                    LinkedListNode current = nodeList.get(i);
+                    LinkedListNode oldNext = prev.next;
+                    prev.next = current.next;
+                    current.next = oldNext;
+                    prevPrev.next = current;
+                    nodeList.get(i - 1).next = prev;
+                    prev = null;
+                    prevPrev = null;
+                }
+            }
+
+        }
+
+        return head;
     }
 
     public static boolean test1() {

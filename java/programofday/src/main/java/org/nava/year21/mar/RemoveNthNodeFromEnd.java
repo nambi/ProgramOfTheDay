@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class RemoveNthNodeFromEnd {
 
-
     public static LinkedListNode removeNthNode(LinkedListNode head, int nodeIndex) {
 
         if (head == null || nodeIndex < 1) {
