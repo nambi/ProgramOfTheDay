@@ -75,7 +75,6 @@ public class RemoveWhiteSpace {
             System.out.println("Tests failed");
         }
 
-
     }
 
 }
