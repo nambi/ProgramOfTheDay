@@ -3,6 +3,7 @@ package org.nava.year21.apr;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Implement a class that implements an in-order iterator on a Binary Tree.
@@ -21,11 +22,36 @@ public class BTreeInorderIterator {
 
     Iterator<BinaryTreeNode> _listItr;
 
+    Stack<BinaryTreeNode> stk = new Stack<BinaryTreeNode>();
+
     public BTreeInorderIterator(BinaryTreeNode root) {
         this.root = root;
         populateList();
         _listItr = _list.listIterator();
+        populateIterator(root);
 
+    }
+
+    public void populateIterator(BinaryTreeNode root) {
+        while (root != null) {
+            stk.push(root);
+            root = root.left;
+        }
+    }
+
+    public boolean hasNext() {
+        return !stk.isEmpty();
+    }
+
+    public BinaryTreeNode getNext() {
+        if (stk.isEmpty())
+            return null;
+
+        BinaryTreeNode rVal = stk.pop();
+        BinaryTreeNode temp = rVal.right;
+        populateIterator(temp);
+
+        return rVal;
     }
 
     private void populateList() {
@@ -48,12 +74,12 @@ public class BTreeInorderIterator {
         return root;
     }
 
-    public boolean hasNext() {
+    public boolean hasNext1() {
 
         return _listItr.hasNext();
     }
 
-    public BinaryTreeNode getNext() {
+    public BinaryTreeNode getNext1() {
 
         return _listItr.next();
     }
