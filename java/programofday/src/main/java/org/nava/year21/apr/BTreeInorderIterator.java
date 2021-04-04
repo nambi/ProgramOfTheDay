@@ -1,6 +1,7 @@
 package org.nava.year21.apr;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -14,16 +15,47 @@ public class BTreeInorderIterator {
 
     BinaryTreeNode root;
 
+    BinaryTreeNode currentRoot;
+
+    List<BinaryTreeNode> _list = new ArrayList<>();
+
+    Iterator<BinaryTreeNode> _listItr;
+
     public BTreeInorderIterator(BinaryTreeNode root) {
         this.root = root;
+        populateList();
+        _listItr = _list.listIterator();
+
+    }
+
+    private void populateList() {
+        //create a list with all left first from bottom and all right from the root
+        // _list
+        buildList(this.root, _list);
+    }
+
+    private static BinaryTreeNode buildList(BinaryTreeNode root, List<BinaryTreeNode> list) {
+
+        if (root == null) {
+            return null;
+        }
+
+        list.add(root);
+
+        BinaryTreeNode left = buildList(root.left, list);
+        BinaryTreeNode right = buildList(root.right, list);
+
+        return root;
     }
 
     public boolean hasNext() {
-        return false;
+
+        return _listItr.hasNext();
     }
 
     public BinaryTreeNode getNext() {
-        return null;
+
+        return _listItr.next();
     }
 
     public static String inorderUsingIterator(BinaryTreeNode root) {
