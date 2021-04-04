@@ -9,6 +9,20 @@ import java.util.List;
  */
 public class BTreeIdenticalCheck {
 
+    public static boolean areIdentical(BinaryTreeNode root1, BinaryTreeNode root2) {
+
+        if (root1 == null && root2 == null) {
+            return true;
+        }
+
+        if (root1 != null && root2 != null) {
+            return ((root1.data == root2.data) &&
+                areIdentical(root1.left, root2.left) &&
+                areIdentical(root1.right, root2.right));
+        }
+
+        return false;
+    }
 
     public static boolean isIdentical(BinaryTreeNode root1, BinaryTreeNode root2) {
 
