@@ -13,6 +13,49 @@ public class BTreeLevelOrderTraversal {
 
     private static String output = "";
 
+    public static String levelOrderTraversalOptimized(BinaryTreeNode root) {
+
+        if (root == null) {
+            return "";
+        }
+
+        String result = "";
+
+        Queue<BinaryTreeNode> current_queue =
+            new ArrayDeque<BinaryTreeNode>();
+
+        BinaryTreeNode dummyNode = new BinaryTreeNode(0);
+
+        current_queue.add(root);
+        current_queue.add(dummyNode);
+
+        while (!current_queue.isEmpty()) {
+            BinaryTreeNode temp = current_queue.poll();
+            System.out.print(temp.data + " ");
+            result += String.valueOf(temp.data) + " ";
+
+            if (temp.left != null) {
+                current_queue.add(temp.left);
+            }
+
+            if (temp.right != null) {
+                current_queue.add(temp.right);
+            }
+
+            if (current_queue.peek() == dummyNode) {
+                System.out.println();
+
+                current_queue.remove();
+
+                if (!current_queue.isEmpty()) {
+                    current_queue.add(dummyNode);
+                }
+            }
+        }
+        System.out.println();
+        return result;
+    }
+
     public static String levelOrderTraversal(BinaryTreeNode root) {
 
         if (root == null) {
@@ -85,6 +128,24 @@ public class BTreeLevelOrderTraversal {
         }
     }
 
+
+    public static boolean test2() {
+
+        List<Integer> list = new ArrayList<>();
+        list.add(100);
+        list.add(200);
+        list.add(50);
+        list.add(75);
+        list.add(35);
+        list.add(25);
+        BinaryTreeNode root = BinaryTree.createBST(list);
+        String output = levelOrderTraversalOptimized(root);
+        System.out.println("Level Order2 \n" + output);
+        boolean result = (output != null);
+        System.out.println("Test2 result " + result);
+        return result;
+    }
+
     public static boolean test1() {
 
         List<Integer> list = new ArrayList<>();
@@ -96,14 +157,14 @@ public class BTreeLevelOrderTraversal {
         list.add(25);
         BinaryTreeNode root = BinaryTree.createBST(list);
         String output = levelOrderTraversal(root);
-        System.out.println("Level Order \n" + output);
+        System.out.println("Level Order1 \n" + output);
         boolean result = (output != null);
         System.out.println("Test1 result " + result);
         return result;
     }
 
     public static boolean doTestsPass() {
-        return test1();
+        return test1() && test2();
     }
 
     public static void main(String[] args) {
