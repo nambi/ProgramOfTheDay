@@ -2,13 +2,7 @@ package org.nava.year21.apr;
 
 public class TransposeAMatrix {
 
-    public static void swap(int[][] inputa, int[][] inputb) {
-        int[][] inputc = inputa;
-        inputa = inputb;
-        inputb = inputa;
-    }
-
-    public static void transpose(int[][] input) {
+   public static void transpose(int[][] input) {
         //first change column to row
         for (int i = 0; i < input.length; i++) {
             for (int j = 0; j < input.length; j++) {
