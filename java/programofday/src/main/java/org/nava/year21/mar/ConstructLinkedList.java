@@ -66,6 +66,7 @@ class LinkedList {
 
         return head;
     }
+
     public static LinkedListNode createLinkedList(ArrayList<Integer> arr) {
         LinkedListNode head = null;
         LinkedListNode tail = null;
@@ -82,6 +83,7 @@ class LinkedList {
 
         return head;
     }
+
     public static void display(LinkedListNode head) {
         LinkedListNode tail = head;
         if (tail != null) {
