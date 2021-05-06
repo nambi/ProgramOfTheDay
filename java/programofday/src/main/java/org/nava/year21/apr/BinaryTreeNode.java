@@ -1,6 +1,6 @@
 package org.nava.year21.apr;
 
-class BinaryTreeNode {
+public class BinaryTreeNode {
     public int data;
     public BinaryTreeNode left;
     public BinaryTreeNode right;
