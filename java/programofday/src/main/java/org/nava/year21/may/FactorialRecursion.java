@@ -7,6 +7,19 @@ package org.nava.year21.may;
  */
 public class FactorialRecursion {
 
+    static int nonRecurFact(int n) {
+        //factorial for 0!=1 and there are formula for negative and imaginary numbers.
+        if (n <= 1) {  //base case
+            return 1;
+        }
+        int result = 1;
+        while (n > 1) {
+            result = result * n;
+            n--;
+        }
+
+        return result;
+    }
 
     static int fact(int n) {
         //factorial for 0!=1 and there are formula for negative and imaginary numbers.
@@ -19,7 +32,7 @@ public class FactorialRecursion {
 
     public static void main(String[] args) {
         int n = 4;
-        int factor = fact(n);
+        int factor = nonRecurFact(n);
         System.out.println(n + " Factorial is " + factor);
 
         n = 0;
