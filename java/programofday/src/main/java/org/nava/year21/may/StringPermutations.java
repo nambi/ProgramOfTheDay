@@ -28,7 +28,7 @@ public class StringPermutations {
         }
     }
 
-    static ArrayList<String> permutations(String input) {
+    public static ArrayList<String> permutations(String input) {
         ArrayList<String> result = new ArrayList<>();
         boolean[] used = new boolean[input.length()];
         StringBuilder output = new StringBuilder();
