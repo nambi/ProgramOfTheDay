@@ -7,6 +7,8 @@ public class QuickSort {
      *
      * @param input
      */
+
+    // O (n log(n))
     static int[] sort(int[] input) {
 
         if (input == null || input.length < 2) {
