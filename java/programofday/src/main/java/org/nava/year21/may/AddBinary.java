@@ -5,6 +5,9 @@ package org.nava.year21.may;
  */
 public class AddBinary {
 
+    public String addBinaryUsingLibrary(String a, String b) {
+        return Integer.toBinaryString(Integer.parseInt(a, 2) + Integer.parseInt(b, 2));
+    }
 
     static String convertToBinary(int a) {
         StringBuilder sbuf = new StringBuilder();
