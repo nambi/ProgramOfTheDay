@@ -33,9 +33,17 @@ public class Palindrome2 {
         return result;
     }
 
+    static boolean test2() {
+
+        boolean output = isPalindromeAfterDelete("abca");
+        boolean result = (output == true);
+        System.out.println("test2 result " + result);
+        return result;
+    }
+
     static boolean doAllTestsPass() {
 
-        return test1();
+        return test1() && test2();
     }
 
     public static void main(String[] args) {
