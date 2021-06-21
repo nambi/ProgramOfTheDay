@@ -6,6 +6,26 @@ package org.nava.year21.june;
 public class Palindrome2 {
 
 
+    private boolean isValid(String s, int start, int end, int k) {
+        if (k > 1) {
+            return false;
+        }
+        while(start <= end) {
+            if (s.charAt(start) == s.charAt(end)) {
+                start++;
+                end--;
+            }
+            else {
+                return isValid(s, start + 1, end, k + 1) || isValid(s, start, end - 1, k + 1);
+            }
+        }
+        return true;
+    }
+
+    public boolean validPalindrome(String s) {
+        return isValid(s, 0, s.length() - 1, 0);
+    }
+
     static boolean isPalindromeAfterDelete(String s) {
         //Ammas
         /**
