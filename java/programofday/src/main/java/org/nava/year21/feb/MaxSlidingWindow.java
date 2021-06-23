@@ -10,6 +10,7 @@ import java.util.LinkedList;
  * w, find the current maximum value in the window as the window slides through the entire array.
  */
 class MaxSlidingWindow {
+    // O (n^2)
     public static ArrayDeque<Integer> findMaxSlidingWindow(int[] arr, int windowSize) {
         ArrayDeque<Integer> result = new ArrayDeque<>();
 

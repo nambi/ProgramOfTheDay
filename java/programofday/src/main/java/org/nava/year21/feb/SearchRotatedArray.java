@@ -16,7 +16,7 @@ public class SearchRotatedArray {
 //        System.out.println("Key(3) found at: " + binarySearchRotated(v2, 3));
 //        System.out.println("Key(6) found at: " + binarySearchRotated(v2, 6));
 
-        int[] v3 = {4, 5, 6, 1, 2, 3, 8, 9, 12, 16};
+        int[] v3 = {4, 5, 6, 8, 9, 12, 16,1, 2, 3};
         //System.out.println("Key(8) found at: " + binarySearchRotated(v3, 8));
 
         //todo fix this test case

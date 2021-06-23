@@ -35,7 +35,7 @@ public class TreeDiameter {
 
     static boolean test1() {
 
-        TreeNode root = new TreeNode(1, new TreeNode(2, new TreeNode(4, null, null), new TreeNode(4, null, null)), new TreeNode(3, null, null));
+        TreeNode root = new TreeNode(1, new TreeNode(2, new TreeNode(4, null, null), new TreeNode(5, null, null)), new TreeNode(3, null, null));
         int d = getDiameter(root);
         boolean result = (d == 3);
         System.out.println("test1 result " + result);
