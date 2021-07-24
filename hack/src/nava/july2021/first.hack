@@ -11,11 +11,11 @@ function main(): void {
     \printf("  %2d        %2d  \n", $i, $i * $i);
   }
   \printf("----------------\n");
-  main1();
+  test1();
   exit(0);
 }
 <<__EntryPoint>>
-function main1(): void {
+function test1(): void {
   echo "Welcome to Hack!\n\n";
 
   \printf("Table of Squares\n" ."----------------\n");
